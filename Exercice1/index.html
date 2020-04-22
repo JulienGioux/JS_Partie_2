@@ -9,12 +9,21 @@
     <h1>Exercices JS Partie 2</h1>
     <h2>Exercice 1</h2>
     <p>
-
+        Créer une variable number et lui donner une valeur. A l'aide d'une condition, si ce nombre est supérieur à 21, afficher un message.
     </p>
 
 
     <script>
- 
+        let number = prompt('Entrez un nombre :', 0);
+        let i = Number(number);
+        while (i <= 21){
+            i = prompt('Ce nombre ne vous permet pas de sortir de la boucle !\nRééssayez :', 0);
+            i = Number(i);
+        }
+        if (i > 21) {
+        window.alert('Vous avez écrit "' + i +'" qui est un nombre supérieur à 21 !\nVous etes sorti de la boucle "while"');
+        }
     </script>
+
 </body>
 </html>
