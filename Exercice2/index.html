@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2</title>
+</head>
+<body>
+    <h1>Exercices JS Partie 2</h1>
+    <h2>Exercice 2</h2>
+    <p>
+        Demander à l'aide d'une boîte de dialogue l'âge d'un utilisateur. S'il a plus de 18 ans, lui afficher Vous êtes majeur, sinon lui afficher Vous êtes mineur.
+    </p>
+
+
+    <script>
+        let number;
+        while (isNaN(number)) {
+            number = +(prompt('Entrez votre age :', 0));
+            if (number <= 0) {
+                number = NaN;
+                window.alert('Je doute que vous ayez un âge négatif !');
+            }
+        }
+        if (number >= 18) {
+            window.alert('Vous êtes majeur !');
+        }
+        else {
+            window.alert('Vous êtes mineur !');
+        }
+    </script>
+</body>
+</html>

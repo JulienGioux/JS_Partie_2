@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 4</title>
+</head>
+<body>
+    <h1>Exercices JS Partie 2</h1>
+    <h2>Exercice 4</h2>
+
+    <h3>Créer une variable day et lui attribuer une valeur entre 1 et 7.</h3>    
+        <p> A l'aide d'un switch, afficher :
+            <ul>
+                <li>Lundi si day est égal à 1</li>
+                <li>Mardi si day est égal à 2</li>
+                <li>Mercredi si day est égal à 3</li>
+                <li>Jeudi si day est égal à 4</li>
+                <li>Vendredi si day est égal à 5</li>
+                <li>Samedi si day est égal à 6</li>
+                <li>Dimanche si day est égal à 7</li>
+            </ul>
+        </p>
+
+    <script>
+        let number;
+        do {
+            day = +(prompt('Entrez un numéro entre 1 et 7 :'));
+            if (isNaN(day) || day < 1 || day > 7) {
+                window.alert(`Ce programme n'est pas en mesure fonctionner si vous n'êtes capable d'entrer un nombre entre 1 et 7 !`);
+            };
+        }while (isNaN(day) || day < 1 || day > 7);
+
+        switch (day){
+            case 1: document.write(`Vous avez choisi le <b>lundi</b>`);break;
+            case 2: document.write(`Vous avez choisi le <b>mardi</b>`);break;
+            case 3: document.write(`Vous avez choisi le <b>mercredi</b>`);break;
+            case 4: document.write(`Vous avez choisi le <b>jeudi</b>`);break;
+            case 5: document.write(`Vous avez choisi le <b>vendredi</b>`);break;
+            case 6: document.write(`Vous avez choisi le <b>samedi</b>`);break;
+            case 7: document.write(`Vous avez choisi le <b>dimanche</b>`);break;
+        }
+    </script>
+</body>
+</html>

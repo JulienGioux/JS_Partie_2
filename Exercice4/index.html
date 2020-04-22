@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 4</title>
+</head>
+<body>
+    <h1>Exercices JS Partie 2</h1>
+    <h2>Exercice 4</h2>
+    <p>
+        Demander une note à l'utilisateur :
+        <ul>
+            <li>Si elle est entre 0 et 3 afficher Nul</li>
+            <li>Si elle est entre 4 et 6 afficher Moyen</li>
+            <li>Si elle est entre 8 et 9 afficher Bien</li>
+            <li>Si elle est égale à 10 afficher Excellent</li>
+        </ul>
+    </p>
+
+
+    <script>
+        let number;
+        do {
+            number = +(prompt('Notez ce site entre 0 et 10 :', 0));
+            if (isNaN(number) || number < 0 || number > 10) {
+                window.alert(`Ce programme n'est pas en mesure fonctionner si vous n'êtes capable d'entrer un nombre entre 0 et 10 !`);
+            };
+        }while (isNaN(number) || number < 0 || number > 10);
+
+        if (number >= 0 && number <= 3){
+            window.alert(`Vous avez noté le site ${number}/10, c'est Nul !`);
+        } else if (number >= 4 && number <= 6){
+            window.alert(`Vous avez noté le site ${number}/10, c'est Moyen !`);
+        }else if (number == 7) {
+            window.alert(`Vous avez noté le site ${number}/10, c'est Pas mal du tout ! ( en normand dans le texte )`);
+        } else if (number == 8 || number == 9){
+            window.alert(`Vous avez noté le site ${number}/10, c'est Bien !`);
+        } else if (number == 10){
+            window.alert(`Vous avez noté le site ${number}/10, c'est Excellent !`);
+        } else {
+            console.log(`Il doit y avoir une erreur quelque part`);
+            console.log(typeof(number));
+        };
+    </script>
+</body>
+</html>

@@ -14,16 +14,12 @@
 
 
     <script>
-        let number = prompt('Entrez un nombre :', 0);
-        let i = Number(number);
-        while (i <= 21){
-            i = prompt('Ce nombre ne vous permet pas de sortir de la boucle !\nRééssayez :', 0);
-            i = Number(i);
-        }
-        if (i > 21) {
-        window.alert('Vous avez écrit "' + i +'" qui est un nombre supérieur à 21 !\nVous etes sorti de la boucle "while"');
-        }
-    </script>
+        let number = +(prompt('Entrez un nombre :', 0));
+        while (number <= 21 || isNaN(number)) {
+            number = +(prompt('Ce nombre ne vous permet pas de sortir de la boucle !\nRééssayez :', 0));
+        };
+        window.alert(`Vous avez écrit ${number} qui est un nombre supérieur à 21 !\nVous etes sorti de la boucle "while"`);
 
+    </script>
 </body>
 </html>
