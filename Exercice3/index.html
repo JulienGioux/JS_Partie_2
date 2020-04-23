@@ -11,22 +11,29 @@
     <p>
         Demander un nombre à l'utilisateur. S'il est pair afficher Le nombre est pair, sinon afficher Le nombre est impair.
     </p>
-
+    <button onclick="exercice3()">
+        exercice 3
+    </button>
+    <p id="result"></p>
 
     <script>
-        let number;
-        while (isNaN(number)) {
-            number = +(prompt('Entrez un nombre :', 0));
-            if (isNaN(number)) {
-                window.alert(`Ce programme n'est pas en mesure fonctionner si vous n'êtes capable d'entrer un nombre !`);
+        function exercice3() {
+            let number;
+            while (!Number.isInteger(number)) {
+                number = +(prompt('Entrez un nombre :', 0));
+                if (!Number.isInteger(number)) {
+                    window.alert(`Ce programme n'est pas en mesure fonctionner si vous n'êtes capable d'entrer un chiffre ou un nombre entier !\nRecommencez s.v.p`);
+                };
             };
-        };
-        if (number % 2 == 0) {
-            window.alert(number + ' est pair !');
+            if (number % 2 == 0) {
+                window.alert(number + ' est pair !');
+                document.getElementById(`result`).innerHTML = number + ' est pair !';
+            }
+            else {
+                window.alert(number + ' est impair !');
+                document.getElementById(`result`).innerHTML = number +  ' est impair !';
+            };
         }
-        else {
-            window.alert(number + ' est impair !');
-        };
     </script>
 </body>
 </html>

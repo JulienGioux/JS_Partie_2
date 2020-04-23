@@ -18,30 +18,41 @@
         </ul>
         <em>Note : On se demande bien pourquoi l'exercice ne prévoit pas le cas du 7/10 donc j'ai pris la libertée de le rajouter...</em>
     </p>
-
+    <button onclick="exercice4()">
+        exercice 4
+    </button>
+    <p id="result"></p>
 
     <script>
-        let number;
-        do {
-            number = +(prompt('Notez ce site entre 0 et 10 :', 0));
-            if (isNaN(number) || number < 0 || number > 10) {
-                window.alert(`Ce programme n'est pas en mesure fonctionner si vous n'êtes capable d'entrer un nombre entre 0 et 10 !`);
+        function exercice4() {
+            let number;
+            do {
+                number = +(prompt('Notez ce site entre 0 et 10 :', 0).replace(/,/g , "."));
+                console.log(number)
+                if (isNaN(number) || number < 0 || number > 10) {
+                    window.alert(`Ce programme n'est pas en mesure fonctionner si vous n'êtes capable d'entrer un nombre entier ou décimal entre 0 et 10 !`);
+                };
+            }while (isNaN(number) || number < 0 || number > 10);
+            number = Number(number.toFixed(2));
+            if (number >= 0 && number <= 3){
+                window.alert(`Vous avez noté le site ${number}/10, c'est Nul !`);
+                document.getElementById(`result`).innerHTML = `Vous avez noté le site ${number}/10, c'est Nul !`;
+            } else if (number >= 4 && number <= 6){
+                window.alert(`Vous avez noté le site ${number}/10, c'est Moyen !`);
+                document.getElementById(`result`).innerHTML = `Vous avez noté le site ${number}/10, c'est Moyen !`;
+            }else if (number == 7) {
+                window.alert(`Vous avez noté le site ${number}/10, c'est pas mal du tout ! ( en normand dans le texte )`);
+                document.getElementById(`result`).innerHTML = `Vous avez noté le site ${number}/10, c'est pas mal du tout ! ( en normand dans le texte )`;          
+            } else if (number == 8 || number == 9){
+                window.alert(`Vous avez noté le site ${number}/10, c'est Bien !`);
+                document.getElementById(`result`).innerHTML = `Vous avez noté le site ${number}/10, c'est Bien !`;
+            } else if (number == 10){
+                window.alert(`Vous avez noté le site ${number}/10, c'est Excellent !`);
+                document.getElementById(`result`).innerHTML = `Vous avez noté le site ${number}/10, c'est Excellent !`;
+            } else {
+                console.log(`Il doit y avoir une erreur quelque part`);
+                console.log(typeof(number));
             };
-        }while (isNaN(number) || number < 0 || number > 10);
-
-        if (number >= 0 && number <= 3){
-            window.alert(`Vous avez noté le site ${number}/10, c'est Nul !`);
-        } else if (number >= 4 && number <= 6){
-            window.alert(`Vous avez noté le site ${number}/10, c'est Moyen !`);
-        }else if (number == 7) {
-            window.alert(`Vous avez noté le site ${number}/10, c'est pas mal du tout ! ( en normand dans le texte )`);
-        } else if (number == 8 || number == 9){
-            window.alert(`Vous avez noté le site ${number}/10, c'est Bien !`);
-        } else if (number == 10){
-            window.alert(`Vous avez noté le site ${number}/10, c'est Excellent !`);
-        } else {
-            console.log(`Il doit y avoir une erreur quelque part`);
-            console.log(typeof(number));
         };
     </script>
 </body>

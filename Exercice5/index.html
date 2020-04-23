@@ -35,12 +35,12 @@
             let day
             do {
                 day = +(prompt('Entrez un numéro entre 1 et 7 :'));
-                if (isNaN(day) || day < 1 || day > 7) {
+                if (!Number.isInteger(day) || day < 1 || day > 7) {
                     window.alert(
                         `Ce programme n'est pas en mesure fonctionner si vous n'êtes capable d'entrer un nombre entre 1 et 7 !`
                         );
                 };
-            } while (isNaN(day) || day < 1 || day > 7);
+            } while (!Number.isInteger(day) || day < 1 || day > 7);
 
             switch (day) {
                 case 1:
