@@ -11,15 +11,20 @@
     <p>
         Créer une variable number et lui donner une valeur. A l'aide d'une condition, si ce nombre est supérieur à 21, afficher un message.
     </p>
+    <button onclick="exercice1()">
+        exercice 1
+    </button>
+    <p id="result"></p>
 
 
     <script>
-        let number = +(prompt('Entrez un nombre :', 0));
-        while (number <= 21 || !Number.isInteger(number)) {
-            number = +(prompt('Ce nombre ne vous permet pas de sortir de la boucle !\nRééssayez :', 0));
-        };
-        window.alert(`Vous avez écrit ${number} qui est un nombre supérieur à 21 !\nVous etes sorti de la boucle "while"`);
-
+        function exercice1(){
+            let number = +(prompt('Entrez un nombre :', 0));
+            while (number <= 21 || !Number.isInteger(number)) {
+                number = +(prompt('Ce nombre ne vous permet pas de sortir de la boucle !\nRééssayez :', 0));
+            };
+            document.getElementById(`result`).innerHTML =`Vous avez écrit <b>${number}</b> qui est un nombre supérieur à <b>21</b> !\n<strong>Vous etes sorti de la boucle "while"</strong>`;
+        }
     </script>
 </body>
 </html>
